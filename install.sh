@@ -119,4 +119,11 @@ yay -S seclists
 sudo chown "${USER}:${USER}" /opt
 mkdir /opt/wordlists
 mv /usr/share/seclists/* /opt/wordlists/
-wget https://objects.githubusercontent.com/github-production-release-asset-2e65be/97553311/d4f580f8-6b49-11e7-8f70-7f460f85ab3a?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230903%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230903T152014Z&X-Amz-Expires=300&X-Amz-Signature=9c375471f9757fafa5b8379d8bcec382281813b03bf0f4b8097c21faddd2af1c&X-Amz-SignedHeaders=host&actor_id=93487218&key_id=0&repo_id=97553311&response-content-disposition=attachment%3B%20filename%3Drockyou.txt&response-content-type=application%2Foctet-stream /opt/wordlists/rockyou.txt
+wget "https://objects.githubusercontent.com/github-production-release-asset-2e65be/97553311/d4f580f8-6b49-11e7-8f70-7f460f85ab3a?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230903%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230903T152014Z&X-Amz-Expires=300&X-Amz-Signature=9c375471f9757fafa5b8379d8bcec382281813b03bf0f4b8097c21faddd2af1c&X-Amz-SignedHeaders=host&actor_id=93487218&key_id=0&repo_id=97553311&response-content-disposition=attachment%3B%20filename%3Drockyou.txt&response-content-type=application%2Foctet-stream /opt/wordlists/rockyou.txt"
+
+# snap
+SNAP="${HOME}/.local/share/snap"
+git clone https://aur.archlinux.org/snapd.git "${SNAP}"
+makepkg -si -c -p "${SNAP}/PKGBUILD"
+sudo systemctl enable --now snapd.socket
+sudo ln -s /var/lib/snapd/snap /snap
