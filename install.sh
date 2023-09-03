@@ -3,7 +3,8 @@
 
 # install useful software
 sudo pacman -S github-cli terminator docker docker-compose docker-buildx nitrogen eog ristretto vlc firefox zsh \
-               unzip unrar p7zip cmake make bzip2 btop blender gimp telegram-desktop discord wine wget curl obsidian
+               unzip unrar p7zip cmake make bzip2 btop blender gimp telegram-desktop discord wine wget curl obsidian \
+               kdeconnect
 
 # install programming languages
 sudo pacman -S python python-pip nodejs npm pnpm yarn ghc lua dune ruby ts-node zig jre-openjdk dotnet-sdk go php \
@@ -14,7 +15,7 @@ sudo pacman -S postgresql redis
 
 # install IDE and other stuff
 sudo pacman -S neovim arduino ffmpeg
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+git clone https://github.com/NvChad/NvChad "${HOME}/.config/nvim" --depth 1
 
 
 JETBRAINS="$HOME"/.local/share/jetbrains
@@ -84,3 +85,30 @@ sudo docker pull hello-world
 sudo docker pull openjdk
 sudo docker pull bcbcarl/hollywood
 
+
+# yay
+YAY="${HOME}"/.local/share/yay
+mkdir -p "${YAY}"
+git clone https://aur.archlinux.org/yay.git "${YAY}"
+makepkg -c -si -p "${YAY}"/PKGBUILD
+
+# projects
+gh auth login
+
+mkdir "${HOME}/github"
+mkdir "${HOME}/personal/projects" -p
+gh repo clone TheGodfatherru/astro_project "${HOME}/personal/projects/astro_project"
+gh repo clone TheGodfatherru/PrettyFox "${HOME}/personal/projects/PrettyFox"
+gh repo clone TheGodfatherru/PrettyFox_rust "${HOME}/personal/projects/PrettyFox_rust"
+
+mkdir "${HOME}/personal/projects/chef" -p
+gh repo clone TheGodfatherru/Chef "${HOME}/personal/projects/chef/Chef"
+gh repo clone TheGodfatherru/ChefApi_payment_db "${HOME}/personal/projects/chef/ChefApi_payment_db"
+gh repo clone TheGodfatherru/ChefApi_operations "${HOME}/personal/projects/chef/ChefApi_operations"
+gh repo clone TheGodfatherru/ChefApi_operations_utils "${HOME}/personal/projects/chef/ChefApi_operations_utils"
+
+mkdir "${HOME}/personal/AlgoCode" -p
+gh repo clone TheGodfatherru/AlgoCode-2023 "${HOME}/personal/projects/AlgoCode-2023"
+
+mkdir "${HOME}/personal/learn_pl" -p
+gh repo clone TheGodfatherru/learn_pl "${HOME}/personal/learn_pl"
