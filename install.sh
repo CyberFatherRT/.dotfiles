@@ -4,7 +4,7 @@
 # install useful software
 sudo pacman -S github-cli terminator docker docker-compose docker-buildx nitrogen eog ristretto vlc firefox zsh \
                unzip unrar p7zip cmake make bzip2 btop blender gimp telegram-desktop discord wine wget curl obsidian \
-               kdeconnect
+               kdeconnect steam parallel
 
 # install programming languages
 sudo pacman -S python python-pip nodejs npm pnpm yarn ghc lua dune ruby ts-node zig jre-openjdk dotnet-sdk go php \
@@ -112,3 +112,11 @@ gh repo clone TheGodfatherru/AlgoCode-2023 "${HOME}/personal/projects/AlgoCode-2
 
 mkdir "${HOME}/personal/learn_pl" -p
 gh repo clone TheGodfatherru/learn_pl "${HOME}/personal/learn_pl"
+
+# InfoSec
+sudo pacman -S nmap openvpn john hashcat wireshark-qt
+yay -S seclists
+sudo chown "${USER}:${USER}" /opt
+mkdir /opt/wordlists
+mv /usr/share/seclists/* /opt/wordlists/
+wget https://objects.githubusercontent.com/github-production-release-asset-2e65be/97553311/d4f580f8-6b49-11e7-8f70-7f460f85ab3a?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230903%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230903T152014Z&X-Amz-Expires=300&X-Amz-Signature=9c375471f9757fafa5b8379d8bcec382281813b03bf0f4b8097c21faddd2af1c&X-Amz-SignedHeaders=host&actor_id=93487218&key_id=0&repo_id=97553311&response-content-disposition=attachment%3B%20filename%3Drockyou.txt&response-content-type=application%2Foctet-stream /opt/wordlists/rockyou.txt
