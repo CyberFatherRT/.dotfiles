@@ -4,7 +4,7 @@
 # install useful software
 sudo pacman -S github-cli terminator docker docker-compose docker-buildx nitrogen eog ristretto vlc firefox zsh \
                unzip unrar p7zip cmake make bzip2 btop blender gimp telegram-desktop discord wine wget curl obsidian \
-               kdeconnect steam parallel
+               kdeconnect steam parallel postman
 
 # install programming languages
 sudo pacman -S python python-pip nodejs npm pnpm yarn ghc lua dune ruby ts-node zig jre-openjdk dotnet-sdk go php \
