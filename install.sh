@@ -47,7 +47,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git "${ZSH_CUSTOM}/pl
 mv ./.zshrc "${HOME}"/.zshrc
 
 dotnet tool install -g csharprepl
-
+pip install ipython --break-system-packages
 
 # docker
 
@@ -121,6 +121,8 @@ gh repo clone TheGodfatherru/learn_pl "${HOME}/personal/learn_pl"
 # InfoSec
 sudo pacman -S nmap openvpn john hashcat wireshark-qt
 yay -S seclists
+pip install pycryptodome --breake-system-packages
+
 sudo chown "${USER}:${USER}" /opt
 mkdir /opt/wordlists
 mv /usr/share/seclists/* /opt/wordlists/
