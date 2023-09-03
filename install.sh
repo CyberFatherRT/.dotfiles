@@ -127,3 +127,5 @@ git clone https://aur.archlinux.org/snapd.git "${SNAP}"
 makepkg -si -c -p "${SNAP}/PKGBUILD"
 sudo systemctl enable --now snapd.socket
 sudo ln -s /var/lib/snapd/snap /snap
+
+sudo snap install spotify
