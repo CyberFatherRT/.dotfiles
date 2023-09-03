@@ -27,10 +27,10 @@ wget "https://download.jetbrains.com/cpp/${CLION}?_gl=1*3pm3em*_ga*OTYzNDgxMDg1L
 tar -xzf "${JETBRAINS}"/${CLION}
 sudo ln -s "${JETBRAINS}"/${CLION}/bin/clion.sh /usr/local/bin/clion
 
-#PYCHARM="pycharm-professional-2023.2.tar.gz"
-#wget "https://download.jetbrains.com/python/${PYCHARM}?_gl=1*1vaa4n5*_ga*OTYzNDgxMDg1LjE2OTMzMzc4Njc.*_ga_9J976DJZ68*MTY5Mzc0ODgxOS45LjEuMTY5Mzc0OTY0MS4wLjAuMA..&_ga=2.24954554.1844104825.1693667438-963481085.1693337867" -O "${JETBRAINS}/${PYCHARM}"
-#tar -xzf "${JETBRAINS}"/${PYCHARM}
-#sudo ln -s "${JETBRAINS}"/pycharm-2023.2/bin/pycharm.sh /usr/local/bin/pycharm
+PYCHARM="pycharm-professional-2023.2.tar.gz"
+wget "https://download.jetbrains.com/python/${PYCHARM}?_gl=1*1vaa4n5*_ga*OTYzNDgxMDg1LjE2OTMzMzc4Njc.*_ga_9J976DJZ68*MTY5Mzc0ODgxOS45LjEuMTY5Mzc0OTY0MS4wLjAuMA..&_ga=2.24954554.1844104825.1693667438-963481085.1693337867" -O "${JETBRAINS}/${PYCHARM}"
+tar -xzf "${JETBRAINS}"/${PYCHARM}
+sudo ln -s "${JETBRAINS}"/pycharm-2023.2/bin/pycharm.sh /usr/local/bin/pycharm
 
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > rustup.sh
@@ -53,37 +53,42 @@ dotnet tool install -g csharprepl
 
 sudo usermod -aG docker "${USER}"
 sudo systemctl enable --now docker.service
-sudo docker pull bitnami/redis
-sudo docker pull manjarolinux/base
-sudo docker pull rabbitmq
-sudo docker pull rust
-sudo docker pull python
-sudo docker pull mariadb
-sudo docker pull mongo
-sudo docker pull public.ecr.aws/lambda/python
-sudo docker pull public.ecr.aws/lambda/python
-sudo docker pull redis
-sudo docker pull node
-sudo docker pull golang
-sudo docker pull memcached
-sudo docker pull nginx
-sudo docker pull httpd
-sudo docker pull mcr.microsoft.com/dotnet/sdk
-sudo docker pull mcr.microsoft.com/dotnet/runtime
-sudo docker pull postgres
-sudo docker pull debian
-sudo docker pull debian
-sudo docker pull cassandra
-sudo docker pull mysql
-sudo docker pull elasticsearch
-sudo docker pull alpine
-sudo docker pull ubuntu
-sudo docker pull ubuntu
-sudo docker pull busybox
-sudo docker pull busybox
-sudo docker pull hello-world
-sudo docker pull openjdk
-sudo docker pull bcbcarl/hollywood
+sudo docker pull bitnami/redis:7.0
+sudo docker pull chef_api_ciphers:latest
+sudo docker pull chef_api_crypto:latest
+sudo docker pull chef_api_hashing:latest
+sudo docker pull chef_api_default:latest
+sudo docker pull manjarolinux/base:latest
+sudo docker pull rabbitmq:latest
+sudo docker pull rust:latest
+sudo docker pull python:latest
+sudo docker pull mariadb:latest
+sudo docker pull mongo:latest
+sudo docker pull public.ecr.aws/lambda/python:3.8
+sudo docker pull public.ecr.aws/lambda/python:latest
+sudo docker pull redis:latest
+sudo docker pull node:latest
+sudo docker pull golang:latest
+sudo docker pull memcached:latest
+sudo docker pull nginx:latest
+sudo docker pull httpd:latest
+sudo docker pull mcr.microsoft.com/dotnet/sdk:7.0
+sudo docker pull mcr.microsoft.com/dotnet/runtime:7.0
+sudo docker pull postgres:latest
+sudo docker pull debian:buster-slim
+sudo docker pull debian:latest
+sudo docker pull cassandra:latest
+sudo docker pull mysql:latest
+sudo docker pull elasticsearch:8.9.1
+sudo docker pull alpine:latest
+sudo docker pull ubuntu:jammy
+sudo docker pull ubuntu:latest
+sudo docker pull busybox:1.36.1-musl
+sudo docker pull busybox:1.36.1-glibc
+sudo docker pull hello-world:latest
+sudo docker pull openjdk:latest
+sudo docker pull bcbcarl/hollywood:latest
+
 
 
 # yay
